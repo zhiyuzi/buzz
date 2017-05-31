@@ -16,7 +16,6 @@ set(SRCS
 )
 
 add_library(buzz STATIC ${SRCS})
-set_target_properties(buzz PROPERTIES COMPILE_FLAGS "-std=c++11")
 
 install(TARGETS buzz DESTINATION lib)
 
