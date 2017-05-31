@@ -16,8 +16,8 @@ TcpServer::TcpServer(EventLoop* loop, const std::string& server_name, InetAddres
     m_owner_loop(loop),
     m_local_addr(local_addr),
     m_server_name(server_name),
-    m_id(0),
     m_ip_port(local_addr.ToString()),
+    m_id(0),
     m_channel(new Channel(loop, m_sock.GetFd(), kReadEvent)),
     m_event_loop_poll(m_owner_loop)
 {

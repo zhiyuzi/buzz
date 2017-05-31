@@ -137,7 +137,7 @@ void TcpConnection::SendBase(const void* messgae, size_t msg_len)
         }
     }
 
-    assert(remaining <= msg_len);
+    assert(remaining < 0 || static_cast<size_t>(remaining) <= msg_len);
     if (fault_error == false && remaining > 0) {
         m_output_buffer.Append(static_cast<const char*>(messgae) + nwtote, remaining);
         if (m_channel->WriteEnable() == false) {

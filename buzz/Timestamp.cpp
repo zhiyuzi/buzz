@@ -11,7 +11,7 @@ std::string Timestamp::ToString() const
     int64_t   sec = m_micro_seconds_since_epoch / kMicroSecondsPerSecond;
     int64_t u_sec = m_micro_seconds_since_epoch % kMicroSecondsPerSecond;
 
-    int n = snprintf(buf, sizeof(buf), "%" PRId64 ".%06" PRId64, sec, u_sec);
+    int n = snprintf(buf, sizeof(buf), "%" PRId64 ".%06" PRId64, sec, u_sec); (void) n;
 
     return buf;
 }

@@ -45,7 +45,7 @@ EventLoopThreadPoll::~EventLoopThreadPoll()
 {
     m_loop_start = false;
 
-    for (int i = 0; i < m_event_poll_size; i++) {
+    for (size_t i = 0; i < m_event_poll_size; i++) {
         delete m_threads[i];
     }
 }
@@ -56,7 +56,7 @@ void EventLoopThreadPoll::Start(size_t poll_size)
 
     m_event_poll_size = poll_size;
 
-    for (int i = 0; i < m_event_poll_size; i++) {
+    for (size_t i = 0; i < m_event_poll_size; i++) {
         auto t = new EventLoopThread();
 
         m_threads.push_back(t);

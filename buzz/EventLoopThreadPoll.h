@@ -15,8 +15,8 @@ namespace buzz
     public:
         EventLoopThreadPoll(EventLoop* base_loop)
             : m_base_loop(base_loop),
-            m_event_poll_size(0), 
             m_loop_start(false),
+            m_event_poll_size(0), 
             m_id(0),
             m_event_loops(0),
             m_threads(0)
